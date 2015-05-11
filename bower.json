@@ -1,0 +1,20 @@
+{
+  "name": "tangram",
+  "version": "0.1.0",
+  "main": ["dest/stylesheets/tangram.min.css"],
+  "license": "MIT",
+  "ignore": ["**/*", "!dest/**/*"],
+  "dependencies": {
+    "jquery": "https://github.com/jquery/jquery.git#1.8.3"
+  },
+  "devDependencies": {
+    "normalize.css": "https://github.com/necolas/normalize.css.git#3.0.0"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "compass",
+    "ui",
+    "layout"
+  ]
+}
