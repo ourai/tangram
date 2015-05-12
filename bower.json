@@ -1,7 +1,10 @@
 {
   "name": "tangram",
   "version": "0.1.0",
-  "main": ["dest/stylesheets/tangram.min.css"],
+  "main": [
+      "dest/tangram.scss",
+      "dest/tangram.min.css"
+    ],
   "license": "MIT",
   "ignore": ["**/*", "!dest/**/*"],
   "dependencies": {

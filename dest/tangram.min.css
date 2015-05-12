@@ -1,0 +1,10 @@
+/*!
+ * Tangram UI Library v0.1.0
+ * https://github.com/ourai/tangram
+ *
+ * Copyright 2015, 2015 Ourairyu, http://ourai.ws/
+ *
+ * Date: 2015-05-12
+ */
+
+html[data-layout=sandwich],html[data-layout=sandwich] body{height:100%}html[data-layout=sandwich] .layout-container{min-height:100%}html[data-layout=sandwich] .layout-container:after,html[data-layout=sandwich] .layout-container:before{content:"\0020";display:block;position:relative;z-index:-999999999;background:transparent none;visibility:hidden;height:auto}html[data-layout=frameset],html[data-layout=frameset] body{width:100%;height:100%;min-height:0;zoom:1}html[data-layout=frameset]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding-top:0;padding-bottom:0;overflow-y:hidden}html[data-layout=frameset] .layout-header{height:0;margin-top:0}html[data-layout=frameset] .layout-footer{height:0;margin-bottom:0}html[data-layout=frameset] .layout-main,html[data-layout=frameset] .layout-sub{height:100%;overflow:auto}html[data-layout=frameset] .layout-sub{width:200px;float:left}

@@ -1,0 +1,58 @@
+// An instance of Sticky Footer
+
+@mixin layout-sandwich(
+    $layout-header-height: auto,
+    $layout-footer-height: auto
+  ) {
+
+  html[data-layout="sandwich"],
+  html[data-layout="sandwich"] body {
+    height: 100%;
+  }
+
+  html[data-layout="sandwich"] {
+    // Header of page
+    // <header class="layout-header"></header>
+    @if $layout-header-height != auto {
+      .layout-header {
+        height: $layout-header-height;
+        margin-bottom: -$layout-header-height;
+      }
+    }
+
+    // Footer of page
+    // <footer class="layout-footer"></footer>
+    @if $layout-footer-height != auto {
+      .layout-footer {
+        height: $layout-footer-height;
+        margin-top: -$layout-footer-height;
+      }
+    }
+
+    // Main area of page
+    // <main class="layout-container"></main>
+    .layout-container {
+      min-height: 100%;
+
+      &:before,
+      &:after {
+        content: "\0020";
+        display: block;
+        position: relative;
+        z-index: -999999999;
+        background: transparent none;
+        visibility: hidden;
+      }
+
+      // Placeholder of page's header
+      &:before {
+        height: $layout-header-height;
+      }
+
+      // Placeholder of page's footer
+      &:after {
+        height: $layout-footer-height;
+      }
+    }
+  }
+}
