@@ -1,5 +1,8 @@
+// Frameset
+
 @mixin layout-frameset(
-    $layout-sub-width: 200px,
+    $sidebar-width: auto,
+    $sidebar-pos: left,
     $layout-header-height: 0,
     $layout-footer-height: 0
   ) {
@@ -14,8 +17,8 @@
 
   html[data-layout="frameset"] {
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     padding: {
       top: $layout-header-height;
       bottom: $layout-footer-height;
@@ -39,8 +42,8 @@
     }
 
     .layout-sub {
-      width: $layout-sub-width;
-      float: left;
+      width: $sidebar-width;
+      float: $sidebar-pos;
     }
   }
 }
