@@ -12,13 +12,10 @@ module.exports = ( grunt ) ->
   grunt.initConfig
     repo: info
     pkg: pkg
-    meta:
-      temp: ".<%= pkg.name %>-cache"
-      dest: "dest"
     concat:
       sass:
         files:
-          "dest/<%= pkg.name %>.scss": [
+          "_<%= pkg.name %>.scss": [
               "src/_sandwich.scss"
               "src/_frameset.scss"
             ]
@@ -26,7 +23,7 @@ module.exports = ( grunt ) ->
       compile:
         options:
           sassDir: "build"
-          cssDir: "dest"
+          cssDir: "."
     cssmin:
       minify:
         options:
@@ -40,7 +37,7 @@ module.exports = ( grunt ) ->
                   " */\n"
           keepSpecialComments: 0
         files:
-          "dest/<%= pkg.name %>.min.css": "dest/<%= pkg.name %>.css"
+          "<%= pkg.name %>.min.css": "<%= pkg.name %>.css"
 
   grunt.loadNpmTasks task for task in npmTasks
 

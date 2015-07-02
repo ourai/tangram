@@ -2,11 +2,21 @@
   "name": "tangram",
   "version": "0.1.0",
   "main": [
-      "dest/tangram.scss",
-      "dest/tangram.min.css"
+      "_tangram.scss",
+      "tangram.min.css"
     ],
   "license": "MIT",
-  "ignore": ["**/*", "!dest/**/*"],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "build",
+    "src",
+    "*.json",
+    "*.md",
+    "*.coffee",
+    "*.css",
+    "!*.min.css"
+  ],
   "keywords": [
     "css",
     "sass",
