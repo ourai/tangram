@@ -1,0 +1,88 @@
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background-color: red;
+}
+
+body {
+  background-color: orange;
+}
+
+.layout-sidebar {
+  background-color: pink;
+  width: 100px;
+  height: 100%;
+  float: left;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.layout-main {
+  height: 100%;
+  overflow: auto;
+  /*position: relative;*/
+}
+
+.layout-content {
+  background-color: yellow;
+}
+
+
+
+.Profile,
+.Navs {
+  text-align: center;
+}
+
+.Profile {
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+}
+
+.Profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.Navs {
+  margin-top: 20px;
+}
+
+.Navs ul {
+  margin: 0;
+  padding: 0 10px;
+  list-style-type: none;
+}
+
+.Navs li {
+  padding: 30px 0;
+  border-bottom: 3px solid transparent;
+}
+
+.Navs li:hover,
+.Navs li.is-selected {
+  background-color: #FFF;
+  border-bottom-color: #0FF;
+  margin-right: -10px;
+}

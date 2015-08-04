@@ -1,4 +1,4 @@
-/* line 11, src/_sandwich.scss */
+/* line 10, src/_sandwich.scss */
 html[data-layout="sandwich"],
 html[data-layout="sandwich"] body {
   height: 100%;
@@ -8,7 +8,7 @@ html[data-layout="sandwich"] body {
 html[data-layout="sandwich"] .layout-container {
   min-height: 100%;
 }
-/* line 22, src/_sandwich.scss */
+/* line 21, src/_sandwich.scss */
 html[data-layout="sandwich"] .layout-container:before, html[data-layout="sandwich"] .layout-container:after {
   content: "\0020";
   display: block;
@@ -18,7 +18,7 @@ html[data-layout="sandwich"] .layout-container:before, html[data-layout="sandwic
   visibility: hidden;
 }
 
-/* line 11, src/_frameset.scss */
+/* line 10, src/_frameset.scss */
 html[data-layout="frameset"],
 html[data-layout="frameset"] body {
   width: 100%;
@@ -46,7 +46,7 @@ html[data-layout="frameset"] .layout-footer {
   height: 0;
   margin-bottom: 0;
 }
-/* line 39, src/_frameset.scss */
+/* line 38, src/_frameset.scss */
 html[data-layout="frameset"] .layout-main,
 html[data-layout="frameset"] .layout-sub {
   height: 100%;
@@ -56,4 +56,34 @@ html[data-layout="frameset"] .layout-sub {
 html[data-layout="frameset"] .layout-sub {
   width: auto;
   float: left;
+}
+
+/* line 8, src/_scroll.scss */
+html[data-layout="scroll"],
+html[data-layout="scroll"] body,
+html[data-layout="scroll"] .layout-sidebar,
+html[data-layout="scroll"] .layout-main {
+  height: 100%;
+}
+
+/* line 16, src/_scroll.scss */
+html[data-layout="scroll"] body:before, html[data-layout="scroll"] body:after {
+  content: "\0020";
+  display: table;
+}
+/* line 22, src/_scroll.scss */
+html[data-layout="scroll"] body:after {
+  clear: both;
+}
+
+/* line 28, src/_scroll.scss */
+html[data-layout="scroll"] .layout-sidebar {
+  width: auto;
+  float: left;
+  min-height: 0;
+  overflow: hidden;
+}
+/* line 35, src/_scroll.scss */
+html[data-layout="scroll"] .layout-main {
+  overflow: auto;
 }

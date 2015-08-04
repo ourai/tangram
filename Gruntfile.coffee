@@ -18,6 +18,7 @@ module.exports = ( grunt ) ->
           "_<%= pkg.name %>.scss": [
               "src/_sandwich.scss"
               "src/_frameset.scss"
+              "src/_scroll.scss"
             ]
     compass:
       compile:

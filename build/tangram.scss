@@ -1,5 +1,7 @@
 @import "../src/sandwich";
 @import "../src/frameset";
+@import "../src/scroll";
 
 @include layout-sandwich;
 @include layout-frameset;
+@include layout-scroll;
