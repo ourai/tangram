@@ -29,7 +29,7 @@ module.exports = ( grunt ) ->
       minify:
         options:
           banner: "/*!\n" +
-                  " * <%= repo.name %> UI Library v<%= repo.version %>\n" +
+                  " * <%= repo.name %> v<%= repo.version %>\n" +
                   " * <%= pkg.homepage %>\n" +
                   " *\n" +
                   " * Copyright 2015, <%= grunt.template.today('yyyy') %> Ourairyu, http://ourai.ws/\n" +
