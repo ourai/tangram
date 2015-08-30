@@ -1,7 +1,25 @@
-@import "../src/sandwich";
-@import "../src/frameset";
-@import "../src/scroll";
+@import "../src/variables";
 
-@include layout-sandwich;
-@include layout-frameset;
-@include layout-scroll;
+// Mixins
+@import "../src/mixins/box-model";
+@import "../src/mixins/boxes";
+@import "../src/mixins/sandwich";
+@import "../src/mixins/frameset";
+@import "../src/mixins/scroll";
+
+// Sticky Footer
+html[data-layout="sandwich"] {
+  @include layout-sandwich;
+}
+
+// 仿框架布局
+html[data-layout="frameset"] {
+  @include layout-frameset;
+}
+
+html[data-layout="scroll"] {
+  @include layout-scroll;
+}
+
+// 规则
+@import "../src/boxes";

@@ -16,15 +16,32 @@ module.exports = ( grunt ) ->
       sass:
         files:
           "_<%= pkg.name %>.scss": [
-              "src/_sandwich.scss"
-              "src/_frameset.scss"
-              "src/_scroll.scss"
+              "src/_variables.scss"
+              # Utilities
+              "src/mixins/_box-model.scss"
+              "src/mixins/_boxes.scss"
+              # Layouts
+              "src/mixins/_sandwich.scss"
+              "src/mixins/_frameset.scss"
+              "src/mixins/_scroll.scss"
+              # Rules
+              "src/_boxes.scss"
             ]
+      test:
+        files:
+          "test/stylesheets/_<%= pkg.name %>.scss": "_<%= pkg.name %>.scss"
     compass:
+      options:
+        outputStyle: "expanded"
+        noLineComments: true
       compile:
         options:
           sassDir: "build"
           cssDir: "."
+      test:
+        options:
+          sassDir: "test/stylesheets"
+          cssDir: "test/stylesheets"
     cssmin:
       minify:
         options:
@@ -47,8 +64,15 @@ module.exports = ( grunt ) ->
       "compass:compile"
       "cssmin"
     ]
+
+  grunt.registerTask "compile_test", [
+      "concat:test"
+      "compass:test"
+    ]
+
   # Default task
   grunt.registerTask "default", [
       "concat:sass"
       "compile_sass"
+      "compile_test"
     ]

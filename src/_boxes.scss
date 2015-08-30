@@ -1,0 +1,3 @@
+.Box--fixedHeight {
+  @include box-fixed-height(".Box-header", auto, ".Box-footer", auto, ".Box-body");
+}

@@ -1,0 +1,50 @@
+@mixin box-fixed-height(
+    $header-selector: "",
+    $header-height: auto,
+    $footer-selector: "",
+    $footer-height: auto,
+    $body-selector: "",
+    $reset: false
+  ) {
+
+  @if $reset != true {
+    &,
+    #{$header-selector},
+    #{$footer-selector} {
+      @include border-box;
+    }
+
+    #{$header-selector},
+    #{$footer-selector} {
+      overflow: auto;
+    }
+
+    @if $body-selector != "" {
+      #{$body-selector} {
+        height: 100%;
+        overflow: auto;
+        @include border-box;
+      }
+    }
+  }
+
+  @if $header-height != auto {
+    padding-top: $header-height;
+
+    #{$header-selector} {
+      height: $header-height;
+      margin-top: -$header-height;
+    }
+  }
+
+  @if $footer-height != auto {
+    padding-bottom: $footer-height;
+
+    #{$footer-selector} {
+      height: $footer-height;
+      margin-bottom: -$footer-height;
+    }
+  }
+
+  @content;
+}

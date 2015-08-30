@@ -1,0 +1,23 @@
+@import "./tangram";
+
+html,
+body,
+.Box--fixedHeight {
+  height: 100%;
+}
+
+.Box--fixedHeight {
+  @include box-fixed-height(".Box-header", 60px, ".Box-footer", 100px, "", true);
+
+  .Box-header {
+    background-color: pink;
+  }
+
+  .Box-footer {
+    background-color: yellow;
+  }
+
+  .Box-body {
+    background-color: blue;
+  }
+}
