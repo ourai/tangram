@@ -1,7 +1,16 @@
-@import "../src/sandwich";
-@import "../src/frameset";
-@import "../src/scroll";
+@import "../src/variables";
+@import "../src/mixins/box-model";
+@import "../src/mixins/boxes";
+@import "../src/mixins/sandwich";
+@import "../src/mixins/frameset";
+@import "../src/mixins/scroll";
 
 @include layout-sandwich;
-@include layout-frameset;
+
+html[data-layout="frameset"] {
+  @include layout-frameset;
+}
+
 @include layout-scroll;
+
+@import "../src/boxes";

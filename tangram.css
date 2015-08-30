@@ -1,14 +1,11 @@
-/* line 10, src/_sandwich.scss */
 html[data-layout="sandwich"],
 html[data-layout="sandwich"] body {
   height: 100%;
 }
 
-/* line 18, src/_sandwich.scss */
 html[data-layout="sandwich"] .layout-container {
   min-height: 100%;
 }
-/* line 21, src/_sandwich.scss */
 html[data-layout="sandwich"] .layout-container:before, html[data-layout="sandwich"] .layout-container:after {
   content: "\0020";
   display: block;
@@ -18,7 +15,37 @@ html[data-layout="sandwich"] .layout-container:before, html[data-layout="sandwic
   visibility: hidden;
 }
 
-/* line 10, src/_frameset.scss */
+html[data-layout="frameset"] {
+  overflow-y: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+html[data-layout="frameset"],
+html[data-layout="frameset"] .Layout-header,
+html[data-layout="frameset"] .Layout-footer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html[data-layout="frameset"] .Layout-header,
+html[data-layout="frameset"] .Layout-footer {
+  overflow: auto;
+}
+html[data-layout="frameset"] .Layout-content, html[data-layout="frameset"] .Layout-sidebar {
+  height: 100%;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html[data-layout="frameset"] .Layout-header {
+  height: 0;
+  margin-top: 0;
+}
+html[data-layout="frameset"] .Layout-footer {
+  height: 0;
+  margin-bottom: 0;
+}
 html[data-layout="frameset"],
 html[data-layout="frameset"] body {
   width: 100%;
@@ -26,39 +53,11 @@ html[data-layout="frameset"] body {
   min-height: 0;
   zoom: 1;
 }
-
-/* line 18, src/_frameset.scss */
-html[data-layout="frameset"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding-top: 0;
-  padding-bottom: 0;
-  overflow-y: hidden;
-}
-/* line 28, src/_frameset.scss */
-html[data-layout="frameset"] .layout-header {
-  height: 0;
-  margin-top: 0;
-}
-/* line 33, src/_frameset.scss */
-html[data-layout="frameset"] .layout-footer {
-  height: 0;
-  margin-bottom: 0;
-}
-/* line 38, src/_frameset.scss */
-html[data-layout="frameset"] .layout-main,
-html[data-layout="frameset"] .layout-sub {
-  height: 100%;
-  overflow: auto;
-}
-/* line 44, src/_frameset.scss */
-html[data-layout="frameset"] .layout-sub {
+html[data-layout="frameset"] .Layout-sidebar {
   width: auto;
   float: left;
 }
 
-/* line 8, src/_scroll.scss */
 html[data-layout="scroll"],
 html[data-layout="scroll"] body,
 html[data-layout="scroll"] .layout-sidebar,
@@ -66,24 +65,39 @@ html[data-layout="scroll"] .layout-main {
   height: 100%;
 }
 
-/* line 16, src/_scroll.scss */
 html[data-layout="scroll"] body:before, html[data-layout="scroll"] body:after {
   content: "\0020";
   display: table;
 }
-/* line 22, src/_scroll.scss */
 html[data-layout="scroll"] body:after {
   clear: both;
 }
 
-/* line 28, src/_scroll.scss */
 html[data-layout="scroll"] .layout-sidebar {
   width: auto;
   float: left;
   min-height: 0;
   overflow: hidden;
 }
-/* line 35, src/_scroll.scss */
 html[data-layout="scroll"] .layout-main {
   overflow: auto;
+}
+
+.Box--fixedHeight,
+.Box--fixedHeight .Box-header,
+.Box--fixedHeight .Box-footer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Box--fixedHeight .Box-header,
+.Box--fixedHeight .Box-footer {
+  overflow: auto;
+}
+.Box--fixedHeight .Box-body {
+  height: 100%;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
