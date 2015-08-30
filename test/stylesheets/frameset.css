@@ -1,0 +1,77 @@
+.Box--fixedHeight,
+.Box--fixedHeight .Box-header,
+.Box--fixedHeight .Box-footer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Box--fixedHeight .Box-header,
+.Box--fixedHeight .Box-footer {
+  overflow: auto;
+}
+.Box--fixedHeight .Box-body {
+  height: 100%;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+html body {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  zoom: 1;
+}
+html body {
+  overflow-y: hidden;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+html body,
+html body .Layout-header,
+html body .Layout-footer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html body .Layout-header,
+html body .Layout-footer {
+  overflow: auto;
+}
+html body .Layout-content, html body .Layout-sidebar {
+  height: 100%;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html body .Layout-header {
+  height: 60px;
+  margin-top: -60px;
+}
+html body .Layout-footer {
+  height: 100px;
+  margin-bottom: -100px;
+}
+html .Layout-sidebar {
+  width: 300px;
+  float: right;
+}
+
+.Layout-header {
+  background-color: pink;
+}
+
+.Layout-footer {
+  background-color: wheat;
+}
+
+.Layout-content {
+  background-color: orange;
+}
+
+.Layout-sidebar {
+  background-color: yellow;
+}

@@ -71,50 +71,48 @@
     $layout-footer-height: auto
   ) {
 
-  html[data-layout="sandwich"],
-  html[data-layout="sandwich"] body {
+  &,
+  body {
     height: 100%;
   }
 
-  html[data-layout="sandwich"] {
-    // Main area of page
-    // <main class="layout-container"></main>
-    .layout-container {
-      min-height: 100%;
+  // Main area of page
+  // <main class="layout-container"></main>
+  .Layout-container {
+    min-height: 100%;
 
-      &:before,
-      &:after {
-        content: "\0020";
-        display: block;
-        position: relative;
-        z-index: -999999999;
-        background: transparent none;
-        visibility: hidden;
-      }
+    &:before,
+    &:after {
+      content: "\0020";
+      display: block;
+      position: relative;
+      z-index: -999999999;
+      background: transparent none;
+      visibility: hidden;
+    }
+  }
+
+  // Header of page
+  @if $layout-header-height != auto {
+    .Layout-header,
+    .Layout-container:before {
+      height: $layout-header-height;
     }
 
-    // Header of page
-    @if $layout-header-height != auto {
-      .layout-header,
-      .layout-container:before {
-        height: $layout-header-height;
-      }
+    .Layout-header {
+      margin-bottom: -$layout-header-height;
+    }
+  }
 
-      .layout-header {
-        margin-bottom: -$layout-header-height;
-      }
+  // Footer of page
+  @if $layout-footer-height != auto {
+    .Layout-footer,
+    .Layout-container:after {
+      height: $layout-footer-height;
     }
 
-    // Footer of page
-    @if $layout-footer-height != auto {
-      .layout-footer,
-      .layout-container:after {
-        height: $layout-footer-height;
-      }
-
-      .layout-footer {
-        margin-top: -$layout-footer-height;
-      }
+    .Layout-footer {
+      margin-top: -$layout-footer-height;
     }
   }
 }
@@ -128,18 +126,20 @@
     $layout-footer-height: 0
   ) {
 
-  overflow-y: hidden;
-  @include box-fixed-height(
-    ".Layout-header", $layout-header-height,
-    ".Layout-footer", $layout-footer-height,
-    ".Layout-content, .Layout-sidebar");
-
   &,
   body {
     width: 100%;
     height: 100%;
     min-height: 0;
     zoom: 1;
+  }
+
+  body {
+    overflow-y: hidden;
+    @include box-fixed-height(
+      ".Layout-header", $layout-header-height,
+      ".Layout-footer", $layout-footer-height,
+      ".Layout-content, .Layout-sidebar");
   }
 
   .Layout-sidebar {
@@ -155,14 +155,14 @@
     $sidebar-minHeight: 0
   ) {
 
-  html[data-layout="scroll"],
-  html[data-layout="scroll"] body,
-  html[data-layout="scroll"] .layout-sidebar,
-  html[data-layout="scroll"] .layout-main {
+  &,
+  body,
+  .Layout-sidebar,
+  .Layout-content {
     height: 100%;
   }
 
-  html[data-layout="scroll"] body {
+  body {
     &:before,
     &:after {
       content: "\0020";
@@ -174,17 +174,15 @@
     }
   }
 
-  html[data-layout="scroll"] {
-    .layout-sidebar {
-      width: $sidebar-width;
-      float: left;
-      min-height: $sidebar-minHeight;
-      overflow: hidden;
-    }
+  .Layout-sidebar {
+    width: $sidebar-width;
+    float: left;
+    min-height: $sidebar-minHeight;
+    overflow: hidden;
+  }
 
-    .layout-main {
-      overflow: auto;
-    }
+  .Layout-content {
+    overflow: auto;
   }
 }
 

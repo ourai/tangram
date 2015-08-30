@@ -1,16 +1,25 @@
 @import "../src/variables";
+
+// Mixins
 @import "../src/mixins/box-model";
 @import "../src/mixins/boxes";
 @import "../src/mixins/sandwich";
 @import "../src/mixins/frameset";
 @import "../src/mixins/scroll";
 
-@include layout-sandwich;
+// Sticky Footer
+html[data-layout="sandwich"] {
+  @include layout-sandwich;
+}
 
+// 仿框架布局
 html[data-layout="frameset"] {
   @include layout-frameset;
 }
 
-@include layout-scroll;
+html[data-layout="scroll"] {
+  @include layout-scroll;
+}
 
+// 规则
 @import "../src/boxes";

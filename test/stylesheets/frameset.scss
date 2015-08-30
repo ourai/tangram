@@ -1,0 +1,21 @@
+@import "./tangram";
+
+html {
+  @include layout-frameset(300px, right, 60px, 100px);
+}
+
+.Layout-header {
+  background-color: pink;
+}
+
+.Layout-footer {
+  background-color: wheat;
+}
+
+.Layout-content {
+  background-color: orange;
+}
+
+.Layout-sidebar {
+  background-color: yellow;
+}

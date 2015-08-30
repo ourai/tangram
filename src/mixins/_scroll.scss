@@ -5,14 +5,14 @@
     $sidebar-minHeight: 0
   ) {
 
-  html[data-layout="scroll"],
-  html[data-layout="scroll"] body,
-  html[data-layout="scroll"] .layout-sidebar,
-  html[data-layout="scroll"] .layout-main {
+  &,
+  body,
+  .Layout-sidebar,
+  .Layout-content {
     height: 100%;
   }
 
-  html[data-layout="scroll"] body {
+  body {
     &:before,
     &:after {
       content: "\0020";
@@ -24,16 +24,14 @@
     }
   }
 
-  html[data-layout="scroll"] {
-    .layout-sidebar {
-      width: $sidebar-width;
-      float: left;
-      min-height: $sidebar-minHeight;
-      overflow: hidden;
-    }
+  .Layout-sidebar {
+    width: $sidebar-width;
+    float: left;
+    min-height: $sidebar-minHeight;
+    overflow: hidden;
+  }
 
-    .layout-main {
-      overflow: auto;
-    }
+  .Layout-content {
+    overflow: auto;
   }
 }

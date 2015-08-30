@@ -7,43 +7,24 @@
     $layout-footer-height: 0
   ) {
 
-  html[data-layout="frameset"],
-  html[data-layout="frameset"] body {
+  &,
+  body {
     width: 100%;
     height: 100%;
     min-height: 0;
     zoom: 1;
   }
 
-  html[data-layout="frameset"] {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: {
-      top: $layout-header-height;
-      bottom: $layout-footer-height;
-    }
+  body {
     overflow-y: hidden;
+    @include box-fixed-height(
+      ".Layout-header", $layout-header-height,
+      ".Layout-footer", $layout-footer-height,
+      ".Layout-content, .Layout-sidebar");
+  }
 
-    .layout-header {
-      height: $layout-header-height;
-      margin-top: -($layout-header-height);
-    }
-
-    .layout-footer {
-      height: $layout-footer-height;
-      margin-bottom: -($layout-footer-height);
-    }
-
-    .layout-main,
-    .layout-sub {
-      height: 100%;
-      overflow: auto;
-    }
-
-    .layout-sub {
-      width: $sidebar-width;
-      float: $sidebar-pos;
-    }
+  .Layout-sidebar {
+    width: $sidebar-width;
+    float: $sidebar-pos;
   }
 }
