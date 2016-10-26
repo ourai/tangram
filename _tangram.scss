@@ -1,4 +1,3 @@
-
 @mixin border-box {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -204,8 +203,4 @@
   #{$content-selector} {
     overflow: auto;
   }
-}
-
-.Box--fixedHeight {
-  @include box-fixed-height(".Box-header", auto, ".Box-footer", auto, ".Box-body");
 }

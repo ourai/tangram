@@ -13,11 +13,12 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "build",
     "src",
+    "test",
+    "tests",
     "*.json",
     "*.md",
-    "*.coffee",
+    "*.js",
     "*.css",
     "!*.min.css"
   ],
@@ -28,6 +29,6 @@
     "layout"
   ],
   "dependencies": {
-    "trick-0.4.1": "ourai/trick#0.4.1"
+    "trick-0.4.2": "ourai/trick#0.4.2"
   }
 }

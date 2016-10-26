@@ -1,10 +1,20 @@
+/*!
+ * Trick (v0.4.1) - Helper kit for Compass
+ * https://github.com/ourai/trick
+ *
+ * Copyright 2015, 2016 Ourai Lin (http://ourai.ws/)
+ *
+ * Date: 2016-10-26
+ */
 html,
 body {
   height: 100%;
 }
+
 html[data-layout="sandwich"] .Layout-content {
   min-height: 100%;
 }
+
 html[data-layout="sandwich"] .Layout-content:before, html[data-layout="sandwich"] .Layout-content:after {
   content: "\0020";
   display: block;
@@ -27,6 +37,7 @@ body {
   padding-top: 0;
   padding-bottom: 0;
 }
+
 body,
 body .Layout-header,
 body .Layout-footer {
@@ -34,10 +45,12 @@ body .Layout-footer {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body .Layout-header,
 body .Layout-footer {
   overflow: auto;
 }
+
 body .Layout-content, body .Layout-sidebar {
   height: 100%;
   overflow: auto;
@@ -45,14 +58,17 @@ body .Layout-content, body .Layout-sidebar {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body .Layout-header {
   height: 0;
   margin-top: 0;
 }
+
 body .Layout-footer {
   height: 0;
   margin-bottom: 0;
 }
+
 html[data-layout="frameset"] .Layout-sidebar {
   width: auto;
   float: left;
@@ -66,15 +82,18 @@ body:before, body:after {
   content: "\0020";
   display: table;
 }
+
 body:after {
   clear: both;
 }
+
 html[data-layout="scroll"] .Layout-sidebar {
   width: auto;
   float: left;
   min-height: 0;
   overflow: hidden;
 }
+
 html[data-layout="scroll"] .Layout-content {
   overflow: auto;
 }
@@ -86,10 +105,12 @@ html[data-layout="scroll"] .Layout-content {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .Box--fixedHeight .Box-header,
 .Box--fixedHeight .Box-footer {
   overflow: auto;
 }
+
 .Box--fixedHeight .Box-body {
   height: 100%;
   overflow: auto;
