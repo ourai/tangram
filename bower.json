@@ -16,6 +16,7 @@
     "src",
     "test",
     "tests",
+    "docs",
     "*.json",
     "*.md",
     "*.js",
