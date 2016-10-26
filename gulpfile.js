@@ -9,6 +9,7 @@ const rename = require("gulp-rename");
 gulp.task("concat", function() {
   gulp
     .src([
+      "./bower_components/trick-0.4.2/_trick.scss",
       "./src/utils/_box-model.scss",
       "./src/components/_boxes.scss",
       "./src/layouts/_sandwich.scss",

@@ -1,3 +1,140 @@
+/*!
+ * Trick (v0.4.1) - Helper kit for Compass
+ * https://github.com/ourai/trick
+ *
+ * Copyright 2015, 2016 Ourai Lin (http://ourai.ws/)
+ *
+ * Date: 2016-10-26
+ */
+
+// Unicode
+
+$UN-space: "\0020" !default;
+$UN-bullet: "\2022" !default;
+$UN-middle_dot: "\00B7" !default;
+$UN-wavy-overline: "\FE4B" !default;
+$UN-wavy-low_line: "\FE4F" !default;
+
+// CSS Properties
+
+@mixin grayscale( $percent: 100% ) {
+  filter: grayscale($percent);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0' /></filter></svg>#grayscale");
+  filter: gray;
+  -webkit-filter: grayscale($percent);
+  -ms-filter: grayscale($percent);
+}
+
+
+
+// CSS3 Enhancement
+
+// @mixin supports( $prop_name, $prop_val ) {
+//   @supports ($prop_name: $prop_val) or
+//             (-o-#{$prop_name}: $prop_val) or
+//             (-ms-#{$prop_name}: $prop_val) or
+//             (-moz-#{$prop_name}: $prop_val) or
+//             (-webkit-#{$prop_name}: $prop_val) {
+//     @content;
+//   }
+// }
+
+@mixin image-set( $args... ) {
+  background-image: -webkit-image-set($args);
+  background-image: image-set($args);
+}
+
+@mixin rotate( $deg: 0deg ) {
+  filter:progid:DXImageTransform.Microsoft.Matrix(M11=cos($deg),M12=-sin($deg),M21=sin($deg),M22=cos($deg),SizingMethod="auto expand");
+  @include transform(rotate($deg));
+}
+
+@mixin linear-gradient( $from, $to ) {
+  @include filter-gradient($from, $to);
+  @include background-image(linear-gradient($from, $to));
+}
+
+// Makes text's vertical alignment middle,
+// should invoked on parent node.
+@mixin text-middle( $target: "" ) {
+  &:before {
+    content: $UN-space;
+    @include inline-block;
+    width: 0;
+    height: 100%;
+  }
+
+  @if $target != "" {
+    #{$target} {
+      @include inline-block;
+    }
+  }
+}
+
+@mixin line_feed {
+  word-wrap: break-word;
+  word-wrap: normal\0;
+  word-break: break-all;
+  white-space: normal;
+}
+
+@mixin square( $size: 100% ) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle( $size: auto ) {
+  @if $size != auto {
+    @include square($size);
+  }
+
+  @include border-radius(50%);
+}
+
+@mixin fill_up {
+  @include square(100%);
+}
+
+// Keep the aspect ratio
+@mixin aspect_ratio( $width: auto, $height: auto, $target: "> *" ) {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: $UN-space;
+    display: block;
+    position: relative;
+    z-index: -999999999;
+
+    @if $width != auto and $height != auto {
+      padding-top: 100% * $height / $width;
+    }
+  }
+
+  #{$target} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+// Covered Background Image
+@mixin covered_background( $url: none, $color: transparent ) {
+  @if $url != none {
+    $url: image-url($url);
+  }
+
+  background: $color $url no-repeat 50% 50%;
+  background-size: cover;
+}
+
+@mixin unstyled_list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 @mixin border-box {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
