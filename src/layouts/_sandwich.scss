@@ -1,0 +1,65 @@
+// Sandwich
+// ==========
+// An instance of Sticky Footer
+
+@mixin layout-sandwich(
+    $header-height: auto,
+    $header-selector: ".Layout-header",
+    $footer-height: auto,
+    $footer-selector: ".Layout-footer",
+    $content-selector: ".Layout-content"
+  ) {
+
+  &,
+  body {
+    height: 100%;
+  }
+
+  // Main area of page
+  // <main class="Layout-content"></main>
+  #{$content-selector} {
+    min-height: 100%;
+
+    &:before,
+    &:after {
+      content: $UN-space;
+      display: block;
+      position: relative;
+      z-index: -999999999;
+      background: transparent none;
+      visibility: hidden;
+    }
+  }
+
+  // Header of page
+  @if $header-height != auto {
+    #{$header-selector} {
+      height: $header-height;
+      margin-bottom: -$header-height;
+    }
+  }
+
+  // Footer of page
+  @if $footer-height != auto {
+    #{$footer-selector} {
+      height: $footer-height;
+      margin-top: -$footer-height;
+    }
+  }
+
+  @if $header-height != auto or $footer-height != auto {
+    #{$content-selector} {
+      @if $header-height != auto {
+        &:before {
+          height: $header-height;
+        }
+      }
+
+      @if $footer-height != auto {
+        &:after {
+          height: $footer-height;
+        }
+      }
+    }
+  }
+}
