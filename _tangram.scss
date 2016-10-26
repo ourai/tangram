@@ -16,7 +16,7 @@
     $header-height: auto,
     $footer-selector: "",
     $footer-height: auto,
-    $body-selector: "",
+    $content-selector: "",
     $reset: false
   ) {
 
@@ -32,8 +32,8 @@
       overflow: auto;
     }
 
-    @if $body-selector != "" {
-      #{$body-selector} {
+    @if $content-selector != "" {
+      #{$content-selector} {
         height: 100%;
         overflow: auto;
         @include border-box;
@@ -67,18 +67,23 @@
 // An instance of Sticky Footer
 
 @mixin layout-sandwich(
-    $layout-header-height: auto,
-    $layout-footer-height: auto
+    $header-height: auto,
+    $header-selector: ".Layout-header",
+    $footer-height: auto,
+    $footer-selector: ".Layout-footer",
+    $content-selector: ".Layout-content"
   ) {
 
-  &,
-  body {
-    height: 100%;
+  @at-root {
+    html,
+    body {
+      height: 100%;
+    }
   }
 
   // Main area of page
-  // <main class="layout-container"></main>
-  .Layout-container {
+  // <main class="Layout-content"></main>
+  #{$content-selector} {
     min-height: 100%;
 
     &:before,
@@ -93,26 +98,34 @@
   }
 
   // Header of page
-  @if $layout-header-height != auto {
-    .Layout-header,
-    .Layout-container:before {
-      height: $layout-header-height;
-    }
-
-    .Layout-header {
-      margin-bottom: -$layout-header-height;
+  @if $header-height != auto {
+    #{$header-selector} {
+      height: $header-height;
+      margin-bottom: -$header-height;
     }
   }
 
   // Footer of page
-  @if $layout-footer-height != auto {
-    .Layout-footer,
-    .Layout-container:after {
-      height: $layout-footer-height;
+  @if $footer-height != auto {
+    #{$footer-selector} {
+      height: $footer-height;
+      margin-top: -$footer-height;
     }
+  }
 
-    .Layout-footer {
-      margin-top: -$layout-footer-height;
+  @if $header-height != auto or $footer-height != auto {
+    #{$content-selector} {
+      @if $header-height != auto {
+        &:before {
+          height: $header-height;
+        }
+      }
+
+      @if $footer-height != auto {
+        &:after {
+          height: $footer-height;
+        }
+      }
     }
   }
 }
@@ -122,27 +135,33 @@
 @mixin layout-frameset(
     $sidebar-width: auto,
     $sidebar-pos: left,
-    $layout-header-height: 0,
-    $layout-footer-height: 0
+    $sidebar-selector: ".Layout-sidebar",
+    $header-height: 0,
+    $header-selector: ".Layout-header",
+    $footer-height: 0,
+    $footer-selector: ".Layout-footer",
+    $content-selector: ".Layout-content"
   ) {
 
-  &,
-  body {
-    width: 100%;
-    height: 100%;
-    min-height: 0;
-    zoom: 1;
+  @at-root {
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      zoom: 1;
+    }
+
+    body {
+      overflow-y: hidden;
+      @include box-fixed-height(
+        $header-selector, $header-height,
+        $footer-selector, $footer-height,
+        join($content-selector, $sidebar-selector, comma));
+    }
   }
 
-  body {
-    overflow-y: hidden;
-    @include box-fixed-height(
-      ".Layout-header", $layout-header-height,
-      ".Layout-footer", $layout-footer-height,
-      ".Layout-content, .Layout-sidebar");
-  }
-
-  .Layout-sidebar {
+  #{$sidebar-selector} {
     width: $sidebar-width;
     float: $sidebar-pos;
   }
@@ -152,36 +171,37 @@
 
 @mixin layout-scroll(
     $sidebar-width: auto,
-    $sidebar-minHeight: 0
+    $sidebar-minHeight: 0,
+    $sidebar-selector: ".Layout-sidebar",
+    $content-selector: ".Layout-content"
   ) {
 
-  &,
-  body,
-  .Layout-sidebar,
-  .Layout-content {
-    height: 100%;
-  }
-
-  body {
-    &:before,
-    &:after {
-      content: "\0020";
-      display: table;
+  @at-root {
+    #{join((html, body), ($sidebar-selector, $content-selector), comma)} {
+      height: 100%;
     }
 
-    &:after {
-      clear: both;
+    body {
+      &:before,
+      &:after {
+        content: "\0020";
+        display: table;
+      }
+
+      &:after {
+        clear: both;
+      }
     }
   }
 
-  .Layout-sidebar {
+  #{$sidebar-selector} {
     width: $sidebar-width;
     float: left;
     min-height: $sidebar-minHeight;
     overflow: hidden;
   }
 
-  .Layout-content {
+  #{$content-selector} {
     overflow: auto;
   }
 }

@@ -1,0 +1,38 @@
+// Scroll
+
+@mixin layout-scroll(
+    $sidebar-width: auto,
+    $sidebar-minHeight: 0,
+    $sidebar-selector: ".Layout-sidebar",
+    $content-selector: ".Layout-content"
+  ) {
+
+  @at-root {
+    #{join((html, body), ($sidebar-selector, $content-selector), comma)} {
+      height: 100%;
+    }
+
+    body {
+      &:before,
+      &:after {
+        content: "\0020";
+        display: table;
+      }
+
+      &:after {
+        clear: both;
+      }
+    }
+  }
+
+  #{$sidebar-selector} {
+    width: $sidebar-width;
+    float: left;
+    min-height: $sidebar-minHeight;
+    overflow: hidden;
+  }
+
+  #{$content-selector} {
+    overflow: auto;
+  }
+}

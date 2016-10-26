@@ -18,12 +18,12 @@ module.exports = ( grunt ) ->
           "_<%= pkg.name %>.scss": [
               "src/_variables.scss"
               # Utilities
-              "src/mixins/_box-model.scss"
-              "src/mixins/_boxes.scss"
+              "src/utils/_box-model.scss"
+              "src/utils/_boxes.scss"
               # Layouts
-              "src/mixins/_sandwich.scss"
-              "src/mixins/_frameset.scss"
-              "src/mixins/_scroll.scss"
+              "src/layouts/_sandwich.scss"
+              "src/layouts/_frameset.scss"
+              "src/layouts/_scroll.scss"
               # Rules
               "src/_boxes.scss"
             ]

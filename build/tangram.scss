@@ -1,11 +1,11 @@
 @import "../src/variables";
 
 // Mixins
-@import "../src/mixins/box-model";
-@import "../src/mixins/boxes";
-@import "../src/mixins/sandwich";
-@import "../src/mixins/frameset";
-@import "../src/mixins/scroll";
+@import "../src/utils/box-model";
+@import "../src/utils/boxes";
+@import "../src/layouts/sandwich";
+@import "../src/layouts/frameset";
+@import "../src/layouts/scroll";
 
 // Sticky Footer
 html[data-layout="sandwich"] {

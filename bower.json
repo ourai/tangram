@@ -1,10 +1,14 @@
 {
   "name": "tangram",
-  "version": "0.2.0",
+  "homepage": "https://github.com/ourai/tangram",
+  "authors": [
+    "Ourai Lin <ourairyu@gmail.com> (http://ourai.ws/)"
+  ],
+  "description": "Layout library",
   "main": [
-      "_tangram.scss",
-      "tangram.min.css"
-    ],
+    "_tangram.scss",
+    "tangram.min.css"
+  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -22,5 +26,8 @@
     "sass",
     "ui",
     "layout"
-  ]
+  ],
+  "dependencies": {
+    "trick-0.4.1": "ourai/trick#0.4.1"
+  }
 }

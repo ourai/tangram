@@ -3,7 +3,7 @@
     $header-height: auto,
     $footer-selector: "",
     $footer-height: auto,
-    $body-selector: "",
+    $content-selector: "",
     $reset: false
   ) {
 
@@ -19,8 +19,8 @@
       overflow: auto;
     }
 
-    @if $body-selector != "" {
-      #{$body-selector} {
+    @if $content-selector != "" {
+      #{$content-selector} {
         height: 100%;
         overflow: auto;
         @include border-box;
