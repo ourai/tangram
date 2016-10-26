@@ -26,15 +26,9 @@ gulp.task("compile", function() {
   gulp
     .src("src/**/*.scss")
     .pipe(sass({outputStyle: "expanded", noLineComments: true}).on("error", sass.logError))
+    .pipe(cssmin({keepSpecialComments: 0}))
+    .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest("./"));
 });
 
-gulp.task("minify", function() {
-  gulp
-    .src("./tangram.css")
-    .pipe(cssmin({keepSpecialComments: 0}))
-    .pipe(rename({suffix: ".min"}))
-    .pipe(gulp.dest("./"))
-});
-
-gulp.task("default", ["concat", "compile", "minify"]);
+gulp.task("default", ["concat", "compile"]);
