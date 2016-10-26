@@ -1,7 +1,11 @@
 @import "./tangram";
 
 html {
-  @include layout-frameset(300px, right, ".Layout-sidebar", 60px, ".Layout-header", 100px, ".Layout-footer");
+  @include layout-frameset(300px, left, ".Layout-sidebar", 60px, ".Layout-header", 100px, ".Layout-footer");
+}
+
+body {
+  margin: 0;
 }
 
 .Layout-header {

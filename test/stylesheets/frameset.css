@@ -1,64 +1,63 @@
-.Box--fixedHeight,
-.Box--fixedHeight .Box-header,
-.Box--fixedHeight .Box-footer {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.Box--fixedHeight .Box-header,
-.Box--fixedHeight .Box-footer {
-  overflow: auto;
-}
-.Box--fixedHeight .Box-body {
-  height: 100%;
-  overflow: auto;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
+/*!
+ * Trick (v0.4.1) - Helper kit for Compass
+ * https://github.com/ourai/trick
+ *
+ * Copyright 2015, 2016 Ourai Lin (http://ourai.ws/)
+ *
+ * Date: 2016-10-26
+ */
 html,
-body {
+html body {
   width: 100%;
   height: 100%;
   min-height: 0;
   zoom: 1;
 }
 
-body {
+html body {
   overflow-y: hidden;
   padding-top: 60px;
   padding-bottom: 100px;
 }
-body,
-body .Layout-header,
-body .Layout-footer {
+
+html body,
+html body .Layout-header,
+html body .Layout-footer {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body .Layout-header,
-body .Layout-footer {
+
+html body .Layout-header,
+html body .Layout-footer {
   overflow: auto;
 }
-body .Layout-content, body .Layout-sidebar {
+
+html body .Layout-content, html body .Layout-sidebar {
   height: 100%;
   overflow: auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body .Layout-header {
+
+html body .Layout-header {
   height: 60px;
   margin-top: -60px;
 }
-body .Layout-footer {
+
+html body .Layout-footer {
   height: 100px;
   margin-bottom: -100px;
 }
+
 html .Layout-sidebar {
   width: 300px;
-  float: right;
+  float: left;
+}
+
+body {
+  margin: 0;
 }
 
 .Layout-header {

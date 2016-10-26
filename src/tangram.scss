@@ -8,6 +8,10 @@
 @import "./layouts/frameset";
 @import "./layouts/scroll";
 
+body {
+  margin: 0;
+}
+
 // Sticky Footer
 html[data-layout="sandwich"] {
   @include layout-sandwich;

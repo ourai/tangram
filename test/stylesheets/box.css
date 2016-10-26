@@ -1,22 +1,11 @@
-.Box--fixedHeight,
-.Box--fixedHeight .Box-header,
-.Box--fixedHeight .Box-footer {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.Box--fixedHeight .Box-header,
-.Box--fixedHeight .Box-footer {
-  overflow: auto;
-}
-.Box--fixedHeight .Box-body {
-  height: 100%;
-  overflow: auto;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
+/*!
+ * Trick (v0.4.1) - Helper kit for Compass
+ * https://github.com/ourai/trick
+ *
+ * Copyright 2015, 2016 Ourai Lin (http://ourai.ws/)
+ *
+ * Date: 2016-10-26
+ */
 html,
 body,
 .Box--fixedHeight {
@@ -27,20 +16,25 @@ body,
   padding-top: 60px;
   padding-bottom: 100px;
 }
+
 .Box--fixedHeight .Box-header {
   height: 60px;
   margin-top: -60px;
 }
+
 .Box--fixedHeight .Box-footer {
   height: 100px;
   margin-bottom: -100px;
 }
+
 .Box--fixedHeight .Box-header {
   background-color: pink;
 }
+
 .Box--fixedHeight .Box-footer {
   background-color: yellow;
 }
+
 .Box--fixedHeight .Box-body {
   background-color: blue;
 }
