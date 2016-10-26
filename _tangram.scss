@@ -210,11 +210,9 @@ $UN-wavy-low_line: "\FE4F" !default;
     $content-selector: ".Layout-content"
   ) {
 
-  @at-root {
-    html,
-    body {
-      height: 100%;
-    }
+  &,
+  body {
+    height: 100%;
   }
 
   // Main area of page
@@ -224,7 +222,7 @@ $UN-wavy-low_line: "\FE4F" !default;
 
     &:before,
     &:after {
-      content: "\0020";
+      content: $UN-space;
       display: block;
       position: relative;
       z-index: -999999999;
@@ -279,22 +277,20 @@ $UN-wavy-low_line: "\FE4F" !default;
     $content-selector: ".Layout-content"
   ) {
 
-  @at-root {
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      min-height: 0;
-      zoom: 1;
-    }
+  &,
+  body {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    zoom: 1;
+  }
 
-    body {
-      overflow-y: hidden;
-      @include box-fixed-height(
-        $header-selector, $header-height,
-        $footer-selector, $footer-height,
-        join($content-selector, $sidebar-selector, comma));
-    }
+  body {
+    overflow-y: hidden;
+    @include box-fixed-height(
+      $header-selector, $header-height,
+      $footer-selector, $footer-height,
+      join($content-selector, $sidebar-selector, comma));
   }
 
   #{$sidebar-selector} {
@@ -312,22 +308,13 @@ $UN-wavy-low_line: "\FE4F" !default;
     $content-selector: ".Layout-content"
   ) {
 
-  @at-root {
-    #{join((html, body), ($sidebar-selector, $content-selector), comma)} {
-      height: 100%;
-    }
+  &,
+  #{join(body, ($sidebar-selector, $content-selector), comma)} {
+    height: 100%;
+  }
 
-    body {
-      &:before,
-      &:after {
-        content: "\0020";
-        display: table;
-      }
-
-      &:after {
-        clear: both;
-      }
-    }
+  body {
+    @include pie-clearfix;
   }
 
   #{$sidebar-selector} {
