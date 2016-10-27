@@ -25,7 +25,7 @@
 ### 安装
 
 ```bash
-bower install --save tangram-0.2.1=ourai/tangram#0.2.1
+bower install --save tangram-0.2.2=ourai/tangram#0.2.2
 ```
 
 ### 引用
@@ -33,7 +33,7 @@ bower install --save tangram-0.2.1=ourai/tangram#0.2.1
 如果是使用 CSS 的话，在 HTML 文件中引入 `tangram.min.css`。详见《[CSS Classes](./docs/classes.md)》。
 
 ```html
-<link rel="stylesheet" href="bower_components/tangram-0.2.1/tangram.min.css">
+<link rel="stylesheet" href="bower_components/tangram-0.2.2/tangram.min.css">
 ```
 
 还可以引入 Sass mixin 根据需要自定义 class 的名字。详见《[Sass Mixins](./docs/mixins.md)》。
@@ -44,5 +44,5 @@ bower install --save tangram-0.2.1=ourai/tangram#0.2.1
 // 也可以只引用 Compass 的 mixin
 @import "bower_components/compass-mixins-0.12.10/lib/compass";
 // 之后引入本项目所提供的 mixin
-@import "bower_components/tangram-0.2.1/tangram";
+@import "bower_components/tangram-0.2.2/tangram";
 ```
