@@ -10,10 +10,6 @@ const copy = require("gulp-copy");
 gulp.task("concat", function() {
   gulp
     .src([
-      // Dependencies
-      "./bower_components/trick-0.4.2/_trick.scss",
-      // Mixins
-      "./src/utils/_box-model.scss",
       "./src/components/_boxes.scss",
       "./src/layouts/_sandwich.scss",
       "./src/layouts/_frameset.scss",

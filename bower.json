@@ -30,6 +30,6 @@
     "layout"
   ],
   "dependencies": {
-    "trick-0.4.2": "ourai/trick#0.4.2"
+    "compass-mixins-0.12.10": "compass-mixins#0.12.10"
   }
 }
