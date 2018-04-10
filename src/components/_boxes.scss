@@ -11,7 +11,7 @@
     &,
     #{$header-selector},
     #{$footer-selector} {
-      @include border-box;
+      @include box-sizing(border-box);
     }
 
     #{$header-selector},
@@ -23,7 +23,7 @@
       #{$content-selector} {
         height: 100%;
         overflow: auto;
-        @include border-box;
+        @include box-sizing(border-box);
       }
     }
   }
