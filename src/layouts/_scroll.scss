@@ -13,7 +13,12 @@
   }
 
   body {
-    @include pie-clearfix;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    *zoom: 1;
   }
 
   #{$sidebar-selector} {

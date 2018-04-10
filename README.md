@@ -37,12 +37,3 @@ bower install --save tangram-0.2.2=ourai/tangram#0.2.2
 ```
 
 还可以引入 Sass mixin 根据需要自定义 class 的名字。详见《[Sass Mixins](./docs/mixins.md)》。
-
-```scss
-// 可以直接引用 Ruby 版的 Compass
-@import "compass";
-// 也可以只引用 Compass 的 mixin
-@import "bower_components/compass-mixins-0.12.10/lib/compass";
-// 之后引入本项目所提供的 mixin
-@import "bower_components/tangram-0.2.2/tangram";
-```

@@ -11,7 +11,9 @@
     &,
     #{$header-selector},
     #{$footer-selector} {
-      @include box-sizing(border-box);
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
     }
 
     #{$header-selector},
@@ -23,7 +25,9 @@
       #{$content-selector} {
         height: 100%;
         overflow: auto;
-        @include box-sizing(border-box);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
       }
     }
   }

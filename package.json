@@ -14,7 +14,6 @@
     "url": "https://github.com/ourai/tangram.git"
   },
   "bugs": "https://github.com/ourai/tangram/issues",
-  "engines": "node >= 0.8.0",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0",
@@ -23,5 +22,10 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2"
+  },
+  "scripts": {
+    "compile": "gulp",
+    "pretest": "npm run compile",
+    "test": "gulp test"
   }
 }
